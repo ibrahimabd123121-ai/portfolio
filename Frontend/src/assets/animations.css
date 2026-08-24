@@ -1,0 +1,35 @@
+.animate-fade-up,
+.animate-slide-up {
+  opacity: 0;
+  transform: translateY(28px);
+}
+
+.animate-fade-up.is-visible,
+.animate-slide-up.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@keyframes floatSlow {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+.animate-float {
+  animation: floatSlow 6s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-fade-up,
+  .animate-slide-up,
+  .animate-float {
+    opacity: 1;
+    transform: none;
+    animation: none;
+  }
+}
